@@ -8,7 +8,7 @@ public class Fraction extends Number{
         long gcd =  Utils.gcd(n,d);
        this.n = n / gcd;
        this.d = d / gcd;
-       // reduceFraction(n, d);
+       // reduceFraction(n,d);
     }
 
     private void reduceFraction(Fraction fra){
