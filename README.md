@@ -1,2 +1,1 @@
-Tomáš Brůžek
-skupina 9:05
+Tomáš Brůžek, skupina 9:05
