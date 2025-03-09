@@ -77,8 +77,8 @@ class FractionParsingTest
     void test08()
     {
         assertEquals(
-                "–1/2",
-                Fraction.parse("–5/10").toString()
+                "-1/2",
+                Fraction.parse("-5/10").toString()
         );
     }
     @Test
@@ -95,6 +95,24 @@ class FractionParsingTest
         assertEquals(
                 "-3/11",
                 Fraction.parse("3/-11").toString()
+        );
+    }
+
+    @Test
+    void test11()
+    {
+        assertEquals(
+                "3/11",
+                Fraction.parse("-3/-11").toString()
+        );
+    }
+
+    @Test
+    void test12()
+    {
+        assertEquals(
+                "-3/11",
+                Fraction.parse("-3/11").toString()
         );
     }
 }

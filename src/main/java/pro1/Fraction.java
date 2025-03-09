@@ -6,21 +6,27 @@ public class Fraction extends Number{
 
     public Fraction(long n, long d){
         long gcd =  Utils.gcd(n,d);
-       this.n = n / gcd;
-       this.d = d / gcd;
-       // reduceFraction(n,d);
+        long[] arr = { n / gcd,d / gcd};
+        correctNegativity(arr);
+        this.n = arr[0];
+        this.d = arr[1];
     }
 
     private void reduceFraction(Fraction fra){
         long gcd =  Utils.gcd(fra.n,fra.d);
-        fra.n = fra.n /gcd;
-        fra.d = fra.d / gcd;
+        long[] arr = {fra.n /gcd, fra.d / gcd};
+        correctNegativity(arr);
+        fra.n = arr[0];
+        fra.d = arr[1];
     }
-   /* private void reduceFraction(long n, long d)){
-        long gcd =  Utils.gcd(n,d);
-        n = n /gcd;
-        d = d / gcd;
-    }*/
+
+    private void correctNegativity(long[] nums){
+        if(nums[1] < 0){
+            nums[1] = -nums[1];
+            nums[0] = -nums[0];
+        }
+    }
+
 
     public static Fraction parse(String str){
 

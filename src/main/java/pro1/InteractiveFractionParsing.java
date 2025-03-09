@@ -17,9 +17,7 @@ public class InteractiveFractionParsing {
     }
 
 
-
-
-
+/*
     private static void checkIfFraction(){
         Utils.generateLine();
         System.out.println("Zadejte zlomek: ");
@@ -29,6 +27,21 @@ public class InteractiveFractionParsing {
         }catch(Exception e){
             System.out.printf("Zadal jste neplatný řetězec %s  \n", input);
             checkIfFraction();
+        }
+    }*/
+
+    private static void checkIfFraction(){
+        boolean end = false;
+        while(!end) {
+            Utils.generateLine();
+            System.out.println("Zadejte zlomek: ");
+            String input = entry.nextLine();
+            try {
+                System.out.printf("Zadal jste zlomek: %s  \n", Fraction.parse(input));
+                end = true;
+            } catch (Exception e) {
+                System.out.printf("Zadal jste neplatný řetězec %s  \n", input);
+            }
         }
     }
 
